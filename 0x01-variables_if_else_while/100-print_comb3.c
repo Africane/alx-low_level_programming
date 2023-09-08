@@ -1,27 +1,30 @@
 #include <stdio.h>
 /**
- * program to print all possible combinations of 2 digits
+ * program to print all possible different combinations of two last digits
  *
  */
 int main(void)
 {
 	int digit, p;
 
-	for (digit = '0'; digit <= '8'; digit++)
+	for (digit = '0'; digit < '9'; digit++)
 	{
 		for (p = digit + 1; p <= '9'; p++)
-		{	
-			putchar('digit');
-			putchar('p');
-			if (digit != '8' || p != '9')
+		{
+			if (p != digit)
 			{
-				putchar(,);
-				putchar( );
+				putchar(digit);
+				putchar(p);
+
+				if (digit == '8' && p == '9')
+					continue;
+
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
-	
 	putchar('\n');
 
-	return 0;
+	return (0);
 }
