@@ -2,7 +2,7 @@
 /**
  * main - entry point
  * description: code to print txt with printf
- * return 0 if successful
+ * Return: 0 if successful
  */
 int main(void)
 {
