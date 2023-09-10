@@ -1,2 +1,2 @@
 #!/bin/bash
-CFILE="$CFILE:-example.c" && gcc -c "CFILE" -o "$OUTFILE"
+gcc -c $CFILE
