@@ -1,20 +1,20 @@
-#include <unistd.h>
+#include "main.h"
 /**
  * main - entry point
  * Description: program to print _putchar to standart output
  * Return: O if successful
  */
-int _putchar(char c);
-
 int main(void)
 {
-	char *str = "_putchar\n";
-	while (*str)
-		_putchar(*str++);
-	return (0);
-}
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 
-int _putchar(char c)
-{
-	return write(1, &c, 1);
+	return (0);
 }
