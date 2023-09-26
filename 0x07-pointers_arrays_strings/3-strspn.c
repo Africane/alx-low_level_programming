@@ -1,42 +1,36 @@
 #include "main.h"
 
 /**
- * _strspn - gets the length of a prefix substring
- * @s: pointer to the string to search
- * @accept: pointer to the string containing acceptable characters
+ * *_strspn - gets the length of a prefix substring
+ * @s: string to evaluate
+ * @accept: string containing the list of characters to match in s
  *
- * Return: the number of bytes in the initial segment of s which consists of
- * bytes from accept
+ * Return: the number of bytes in the initial segment of s which consist only
+ * of bytes from accept
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int count = 0;
-	int isAcceptable = 0;
+	int i, j, f, flag;
 
-	while (*s)
+	f = 0;
+
+	for (i = 0; s[i] != '\0'; j++)
 	{
-		/*reset the flag for each character in s*/
-		isAcceptable = 0;
-
-		for (int i = 0; accept[i]; i++)
+		flag = 0;
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (*s == accept[i])
+			if (s[i]  == accept[j])
 			{
-				isAcceptable = 1;
-				break;
+				f++;
+				flag = 1;
 			}
 		}
-
-		if (!isAcceptable)
+		if (flag == 0)
 		{
-			/*stop when a character not in accept is encountered*/
-			break;
+			return (f);
 		}
-
-		count++;
-		s++;
 	}
 
-	return (count);
+	return (0);
 }
