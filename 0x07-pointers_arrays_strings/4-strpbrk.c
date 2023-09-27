@@ -12,21 +12,20 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	while (*s)
+	int i, j;
+
+	for (i = 0; *s != '\0'; j++)
 	{
-		for (int i = 0; accept[i]; i++)
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (*s == accept[i])
+			if (*s == accept[j])
 			{
-				/*found a matching byte*/
 				return (s);
 			}
 		}
 
-		/*move to the next chatacter in s*/
 		s++;
 	}
 
-	/*no matching byte found*/
 	return (NULL);
 }
