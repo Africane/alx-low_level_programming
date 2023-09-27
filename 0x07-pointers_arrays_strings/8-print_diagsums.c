@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -8,28 +9,17 @@
 
 void print_diagsums(int *a, int size)
 {
-	int sum1 = 0, sum2 = 0;
+	int i;
+	unsigned int sum, sum1;
 
-	for (int i = 0; i < size; i++)
+	sum = 0;
+	sum1 = 0;
+
+	for (i = 0; i < size; i++)
 	{
-		/*sum of the main diagonal*/
-		sum1 += a[i * size + i];
-		/*sum of the other diagonal*/
-		sum2 += a[i * size + (size - 1 - i)];
+		sum += a[(size * i) + i];
+		sum1 += a[(size * (i + 1)) - (i + 1)];
 	}
 
-	printf("%d, %d\n", sum1, sum2);
-}
-
-int main(void)
-{
-	int matrix[3][3] = {
-		{1, 2, 3},
-		{4, 5, 6},
-		{7, 8, 9}
-	};
-
-	print_diagsums((int *)matrix, 3);
-
-	return (0);
+	printf("%d, %d\n", sum, sum1);
 }
