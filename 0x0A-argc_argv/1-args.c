@@ -7,7 +7,7 @@
  * Return: 0 (Success)
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
 	/*print the value of argc*/
 	printf("%d\n", argc - 1);
