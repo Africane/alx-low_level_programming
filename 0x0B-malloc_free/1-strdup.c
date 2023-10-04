@@ -1,62 +1,129 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * _strdup - duplicate a string
- * @str: src string
- * Return: pointer to the duplicated string (Success), NULL (Failure)
+ * *_strdup - copies the string given as parameter
+ * @str: string to duplicate
+ *
+ * Return: pointer to the copied string (Success), NULL (Error)
  */
-
 char *_strdup(char *str)
 {
-	if (str == NULL)
-	{
-		/*return NULL if the input string is NULL*/
-		return (NULL);
-	}
+  char *dup;
+  unsigned int i, len;
 
-	/*Calculate the length of the input string*/
-	size_t len = 0;
-	
-	while (str[len] != '\0')
-	{
-		len++;
-	}
+  i = 0;
+  len = 0;
 
-	/*Allocate memory for the duplicated string (including the null terminator)*/
-	char *dup_str = (char *)malloc(len + 1);
+  if (str == NULL)
+    return (NULL);
 
-	if (dup_str == NULL)
-	{
-		/*Memory allocation failed, return NULL*/
-		return (NULL);
-	}
+  while (str[len])
+    len++;
 
-	/*Copy the characters from the source string to the duplicated string*/
-	for (size_t i = 0; i <= len; i++)
-	{
-		dup_str[i] = str[i];
-	}
+  dup = malloc(sizeof(char) * (len + 1));
 
-	return (dup_str);
-}
+  if (dup == NULL)
+    return (NULL);
 
-int main(void)
+  while ((dup[i] = str[i]) != '\0')
+    i++;
+
+  return (dup);
+}#include <stdlib.h>
+#include "main.h"
+
+ /**
+  * *_strdup - copies the string given as parameter
+  * @str: string to duplicate
+  *
+  * Return: pointer to the copied string (Success), NULL (Error)
+  */
+char *_strdup(char *str)
 {
-	char *original = "Hellom world!";
-	char *duplicate = _strdup(original);
+  char *dup;
+  unsigned int i, len;
 
-	if (duplicate != NULL)
-	{
-		printf("Original: %s\n", original);
-		printf("Duplicate: %s\n", duplicate);
+  i = 0;
+  len = 0;
 
-		/*free the memory allocated  for the duplicated string*/
-		free(duplicate);
-	} else 
-	{
-	printf("Memory allocation failed.\n");
-	}
+  if (str == NULL)
+    return (NULL);
 
-	return (0);
+  while (str[len])
+    len++;
+
+  dup = malloc(sizeof(char) * (len + 1));
+
+  if (dup == NULL)
+    return (NULL);
+
+  while ((dup[i] = str[i]) != '\0')
+    i++;
+
+  return (dup);
+}#include <stdlib.h>
+#include "main.h"
+
+ /**
+  * *_strdup - copies the string given as parameter
+  * @str: string to duplicate
+  *
+  * Return: pointer to the copied string (Success), NULL (Error)
+  */
+char *_strdup(char *str)
+{
+  char *dup;
+  unsigned int i, len;
+
+  i = 0;
+  len = 0;
+
+  if (str == NULL)
+    return (NULL);
+
+  while (str[len])
+    len++;
+
+  dup = malloc(sizeof(char) * (len + 1));
+
+  if (dup == NULL)
+    return (NULL);
+
+  while ((dup[i] = str[i]) != '\0')
+    i++;
+
+  return (dup);
+}#include <stdlib.h>
+#include "main.h"
+
+ /**
+  * *_strdup - copies the string given as parameter
+  * @str: string to duplicate
+  *
+  * Return: pointer to the copied string (Success), NULL (Error)
+  */
+char *_strdup(char *str)
+{
+  char *dup;
+  unsigned int i, len;
+
+  i = 0;
+  len = 0;
+
+  if (str == NULL)
+    return (NULL);
+
+  while (str[len])
+    len++;
+
+  dup = malloc(sizeof(char) * (len + 1));
+
+  if (dup == NULL)
+    return (NULL);
+
+  while ((dup[i] = str[i]) != '\0')
+    i++;
+
+  return (dup);
 }
