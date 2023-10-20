@@ -8,13 +8,15 @@
 
 void free_list(list_t *head)
 {
-	list_t *current;
-
-	while (head != NULL)
+	while (head)
 	{
-		current = head;
+		list_t *current_node = head;
 		head = head->next;
-		free(current->str);
-		free(current);
+
+		/*Free the duplicated string*/
+		free(current_node->str);
+
+		/*Free the current node*/
+		free(current_node);
 	}
 }
