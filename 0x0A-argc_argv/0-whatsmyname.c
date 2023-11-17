@@ -5,14 +5,11 @@
  * @argc: counts args given
  * @argv: argument vector
  *
- * Return: 0 if successful, 1 if there is an error
+ * Return: 0 if successful
  */
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	if (argc > 0)
-		printf("%s\n", argv[0]);
-		return (0);
-	fprintf(stderr, "Error: argc is not greater thatn 0/n");
-	return (1);
+	printf("%s\n", *argv);
+	return (0);
 }
