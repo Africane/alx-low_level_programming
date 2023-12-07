@@ -1,16 +1,31 @@
 #include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 
 /**
- * list_len - Returns the number of elements in a linked list (recursive version)
- * @h: Pointer to the list_t list
+ * add_node - Adds a new node at the beginning of a linked list
+ * @head: Double pointer to the list_t list
+ * @str: New string to add in the node
  *
- * Return: Number of elements in the list
+ * Return: The address of the new element, or NULL if it fails
  */
-size_t list_len(const list_t *h)
+list_t *add_node(list_t **head, const char *str)
 {
-    if (h == NULL)
-        return 0;
+	list_t *new_node = malloc(sizeof(list_t));
 
-    return 1 + list_len(h->next);
+	if (!new_node)
+		return (NULL);
+
+	new_node->str = strdup(str);
+	if (!new_node->str)
+	{
+		free(new_node);
+		return (NULL);
+	}
+
+	new_node->len = strlen(str);
+	new_node->next = *head;
+	*head = new_node;
+
+	return (new_node);
 }
